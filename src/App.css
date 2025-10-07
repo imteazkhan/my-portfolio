@@ -1,0 +1,357 @@
+/* App.css - Cosmic Dark Theme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #e1e8f0;
+  width: 100%;
+  overflow-x: hidden;
+  background: #0a0a0f;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 70%, rgba(255, 119, 198, 0.08) 0%, transparent 50%);
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Additional cosmic elements */
+.cosmic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.cosmic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 10% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 80%, rgba(118, 75, 162, 0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 119, 198, 0.08) 0%, transparent 60%);
+  animation: cosmicPulse 15s ease-in-out infinite;
+}
+
+.cosmic-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    conic-gradient(from 0deg at 20% 30%, transparent 0deg, rgba(102, 126, 234, 0.05) 60deg, transparent 120deg),
+    conic-gradient(from 180deg at 80% 70%, transparent 0deg, rgba(118, 75, 162, 0.05) 60deg, transparent 120deg);
+  animation: cosmicRotate 120s linear infinite;
+}
+
+@keyframes cosmicPulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cosmicRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced Cosmic background with multiple star layers */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(1px 1px at 25px 5px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 50px 25px, rgba(102,126,234,0.8), transparent),
+    radial-gradient(2px 2px at 90px 5px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 130px 25px, rgba(118,75,162,0.6), transparent),
+    radial-gradient(2px 2px at 160px 5px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 200px 25px, rgba(102,126,234,0.4), transparent),
+    radial-gradient(1px 1px at 230px 5px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 270px 25px, rgba(118,75,162,0.3), transparent);
+  background-repeat: repeat;
+  background-size: 300px 50px;
+  animation: slowStars 60s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.App::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(1px 1px at 40px 10px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 80px 30px, rgba(102,126,234,0.5), transparent),
+    radial-gradient(1px 1px at 120px 10px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(118,75,162,0.4), transparent),
+    radial-gradient(2px 2px at 200px 10px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 240px 30px, rgba(102,126,234,0.7), transparent),
+    radial-gradient(1px 1px at 280px 10px, rgba(255,255,255,0.5), transparent);
+  background-repeat: repeat;
+  background-size: 320px 40px;
+  animation: slowStars 80s linear infinite reverse;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+@keyframes slowStars {
+  from { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 0.6;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  to { 
+    transform: translateY(-50px) translateX(-20px); 
+    opacity: 0.6;
+  }
+}
+
+/* Twinkling effect for individual stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Add some shooting stars */
+.shooting-star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(102,126,234,0.6));
+  border-radius: 50%;
+  animation: shootingStar 3s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+  transform: translateX(-20px);
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 80px;
+  width: 100%;
+}
+
+/* Global Section Title Styles */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.6);
+}
+
+/* Global Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  border-color: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #667eea;
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
