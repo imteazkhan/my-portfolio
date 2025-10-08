@@ -6,26 +6,26 @@ const Projects = () => {
     {
       id: 1,
       title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      image: '/api/placeholder/400/250'
+      description: 'A full-stack e-commerce solution',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+      github: 'https://github.com/asamamun/Family-Haat-Bazar',
+      demo: 'https://coders64.xyz/projects/shopease/',
+      image: '../../assets/shopease.png'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates',
-      technologies: ['React', 'Firebase', 'Material-UI'],
+      title: 'HR Management App',
+      description: 'A collaborative HR management application with real-time updates',
+      technologies: ['Laravel', 'Blade', 'MySQL', 'PHP'],
       github: 'https://github.com',
       demo: 'https://demo.com',
       image: '/api/placeholder/400/250'
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard with location-based forecasts',
-      technologies: ['React', 'API', 'Chart.js'],
+      title: 'Car Rental App',
+      description: 'A responsive car rental application with car information and booking features',
+      technologies: ['React', 'API', 'PHP', 'CSS', 'JavaScript'],
       github: 'https://github.com',
       demo: 'https://demo.com',
       image: '/api/placeholder/400/250'
@@ -42,7 +42,7 @@ const Projects = () => {
               key={project.id} 
               className="project-card"
               data-aos="fade-up"
-              data-aos-delay={200 + (index * 200)}
+              data-aos-delay={200 + (index * 150)}
             >
               <div className="project-image">
                 <img src={project.image} alt={project.title} />

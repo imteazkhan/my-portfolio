@@ -24,7 +24,7 @@ const Skills = () => {
               key={index} 
               className="skill-item"
               data-aos="fade-up"
-              data-aos-delay={300 + (index * 100)}
+              data-aos-delay={200 + (index * 100)}
             >
               <div className="skill-header">
                 <span className="skill-name">{skill.name}</span>

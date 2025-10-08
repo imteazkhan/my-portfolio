@@ -61,10 +61,10 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className="experience-section" data-aos="fade-up" data-aos-delay="900">
+        <div className="experience-section" data-aos="fade-up" data-aos-delay="500">
           <h3 className="experience-title">My Journey</h3>
           <div className="timeline">
-            <div className="timeline-item" data-aos="fade-right" data-aos-delay="1000">
+            <div className="timeline-item" data-aos="fade-right" data-aos-delay="600">
               {/* <div className="timeline-date">2022 - Present</div> */}
               <div className="timeline-content">
                 <h4>Senior Frontend Developer</h4>
@@ -72,7 +72,7 @@ const About = () => {
                 <p>Leading frontend development for multiple client projects using React and TypeScript.</p>
               </div>
             </div>
-            <div className="timeline-item" data-aos="fade-left" data-aos-delay="1100">
+            <div className="timeline-item" data-aos="fade-left" data-aos-delay="700">
               {/* <div className="timeline-date">2020 - 2022</div> */}
               <div className="timeline-content">
                 <h4>Full Stack Developer</h4>
@@ -80,7 +80,7 @@ const About = () => {
                 <p>Developed and maintained web applications using MERN stack.</p>
               </div>
             </div>
-            <div className="timeline-item" data-aos="fade-right" data-aos-delay="1200">
+            <div className="timeline-item" data-aos="fade-right" data-aos-delay="800">
               <div className="timeline-date">2024 - 2025</div>
               <div className="timeline-content">
                 <h4>Junior Developer</h4>
